@@ -200,7 +200,7 @@ function criaCardCarrinho(produto){
     li.addEventListener("click", removeProduto)
 
     let img = document.createElement("img")
-    img.src = `${produto.img}`
+    img.src = `./img/${produto.img}`
     img.height = 67
     img.width  = 88
     img.alt = `${produto.nameItem}`
