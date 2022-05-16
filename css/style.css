@@ -47,11 +47,24 @@ li.itemMenu {
     font-size: 16px;
 
 }
+.ativo {
+
+    font-weight: 600;
+
+}
+.naoAtivo {
+
+    font-weight: 400;
+
+}
+
+
 li.itemMenu:hover {
 
     font-size: 24px;
     color: #2E245E;
     cursor: pointer;
+    font-weight: 600;
 
 }
 
@@ -64,12 +77,17 @@ main.container {
 
 }
 
+.produtos{
+    
+    width: 1008px;
+
+}
 
 
 .produtos ul{
-
     max-width: 1008px;
     width: 100%;
+    
     display: flex;
     flex-wrap: wrap;
 
@@ -91,16 +109,6 @@ li.item:hover{
     border: 3px solid #2E245E;
 }
 
-.ativo {
-
-    font-weight: 600;
-
-}
-.naoAtivo {
-
-    font-weight: 400;
-
-}
 
 
 div.dadosCard{

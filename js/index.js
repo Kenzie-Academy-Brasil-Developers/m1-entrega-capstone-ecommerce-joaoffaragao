@@ -1,13 +1,100 @@
-let listCarrinho = []
+function defineListaProdutos(produtos){
+
+    let pesquisar =  document.querySelector(".btnPesquisar")
+    
+    let novaLista = defineListaProdutosMenu(produtos)
+
+    pesquisar.addEventListener("click",function(){
+        
+        let input = document.querySelector(".inputPesquisar")
+        
+        valor  = input.value
+        
+        novaLista = verificaOAtivo(produtos)
+
+        novaLista = defineListaProdutosPesquisa(novaLista,valor)
+        
+        filtra(novaLista)
+    })
+    
+
+  return  novaLista
+
+}
+
+function defineListaProdutosPesquisa(produtos,valor){
+
+    let novaLista = []
+
+    produtos.forEach((produto) =>{
+        let produtoNome = produto.nameItem.split(" ")
+
+        produtoNome.forEach((nome) => {
+            
+            if(nome.toLowerCase() == valor.toLowerCase()){
+                novaLista.push(produto)
+            }
+        })
+    })
+
+    return novaLista
+}
+
+function defineListaProdutosMenu(produtos){
+
+    let element = document.querySelector(".menu")
+
+    element.addEventListener("click",eventoClickItemMenu)
+
+    return produtos
+}
+
+function eventoClickItemMenu(event){
+    let input = document.querySelector(".inputPesquisar")
+    input.value = ""
+
+    produtos = [...data]
+
+    let lista = document.querySelectorAll(".itemMenu")
+       
+    for(let i = 0; i < lista.length ; i++){
+
+        if(lista[i].innerText == event.target.innerText){
+            lista[i].classList.add("ativo")
+            lista[i].classList.remove("naoAtivo") 
+        }else{
+            lista[i].classList.add("naoAtivo") 
+            lista[i].classList.remove("ativo") 
+        }
+
+    }
+
+    produtos = verificaOAtivo(produtos)
+    
+    filtra(produtos)
+}
 
 
-function reloadProdutos(){
+function verificaOAtivo(produtos){
+
+    let categoria  = document.querySelector(".ativo").innerHTML
+
+    if(categoria != "Todos"){
+        produtos = produtos.filter(produto => {
+            return produto.tag[0] == categoria
+        })
+    }
+
+  return produtos
+}
+
+function filtra(novaLista){
 
     let ul = document.querySelector(".produtos ul")
 
     ul.innerHTML  = ''
 
-    produtos(data)
+    penduraCard(novaLista)
 
 }
 
@@ -17,14 +104,13 @@ function reloadCarrinho(){
 
 }
 
-
 function criaCardProduto(produto){
 
     let li = document.createElement("li")
     li.classList.add("item")
     li.id = `${produto.id}`
 
-    li .addEventListener("click", adicionarProduto)
+    li.addEventListener("click", adicionarProduto)
 
     let img = document.createElement("img")
     img.src = `${produto.img}`
@@ -68,8 +154,6 @@ function criaDescricaoProduto(produto){
     buttonAdicionar.classList.add("btnAdicionar")
     buttonAdicionar.innerText = "Adicionar ao carrinho"
 
-    
-
     div.appendChild(buttonAdicionar)
 
     return div
@@ -80,7 +164,6 @@ function adicionarProduto(event){
     if(event.target.tagName == "BUTTON"){
         
         data.forEach(produto =>{
-
 
             if(produto.id ==  event.currentTarget.id){
                 listCarrinho.push(produto)
@@ -128,23 +211,22 @@ function criaCardCarrinho(produto){
 
     return li
 
-
 }
 
 function removeProduto(event){
 
-    console.log(event.currentTarget.id)
-
     let removeu = true
 
-    listCarrinho.forEach((produto,index) => {
-        if(produto.id == event.currentTarget.id  && removeu){
-            listCarrinho.splice(index,1)
-            removeu = false
-        }
-    })
-
-    reloadCarrinho()
+    if(event.target.tagName == "BUTTON"){
+        listCarrinho.forEach((produto,index) => {
+            if(produto.id == event.currentTarget.id  && removeu){
+                listCarrinho.splice(index,1)
+                removeu = false
+            }
+        })
+    
+        reloadCarrinho()
+    }
     
 }
 
@@ -185,7 +267,6 @@ function penduraCardCarrinho(produtos){
 
 }
 
-
 function detalhesCompra(produtos){
  
     let total = 0
@@ -206,7 +287,6 @@ function detalhesCompra(produtos){
     return detalhesCompra
 
 }
-
 
 function deatalheQuantidade(produtos){
     let div = document.createElement("div")
@@ -243,8 +323,12 @@ function detalheTotal(total){
     return div
 }
 
-function produtos(produtos){
+function produtos(baseDados){
+
+    let produtos = defineListaProdutos([...baseDados])
+
     penduraCard(produtos)
+
 }
 
 function carrinho(lista){
@@ -291,10 +375,12 @@ function carrinho(lista){
    
 }
 
+let listCarrinho = []
+
+produtos(data)
 
 carrinho(listCarrinho)
 
-produtos(data)
 
 
 
