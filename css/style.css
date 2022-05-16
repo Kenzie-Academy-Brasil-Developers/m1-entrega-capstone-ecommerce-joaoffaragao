@@ -23,6 +23,14 @@ header h1.titulo{
     font-size: 30px;
 
 }
+header h1.titulo:hover{
+
+    margin-left: 118px;
+    font-weight: 700;
+    font-size: 40px;
+    cursor: pointer;
+
+}
 
 nav.menu ul {
 
@@ -32,21 +40,18 @@ nav.menu ul {
 
 }
 
-.ativo {
-
-    font-weight: 600;
-
-}
-.naoAtivo {
-
-    font-weight: 400;
-
-}
 
 li.itemMenu {
 
     padding-left: 20px;
     font-size: 16px;
+
+}
+li.itemMenu:hover {
+
+    font-size: 24px;
+    color: #2E245E;
+    cursor: pointer;
 
 }
 
@@ -85,6 +90,18 @@ li.item{
 li.item:hover{
     border: 3px solid #2E245E;
 }
+
+.ativo {
+
+    font-weight: 600;
+
+}
+.naoAtivo {
+
+    font-weight: 400;
+
+}
+
 
 div.dadosCard{
     display: flex;
@@ -159,16 +176,174 @@ button.btnAdcionar:hover{
 
     color: #2E245E;
     text-decoration: underline;
-    cursor: pointer;
+    cursor: pointer; 
 
+}
+
+
+aside.container {
+
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
     
+    
+}
+
+section.pesquisa{
+
+    margin-bottom: 30px;
+
+}
+
+input.inputPesquisar{
+
+    height: 50px;
+    width: 235px;
+    color: #333333;
+    font-size: 14px;
+    line-height: 16px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: #F5F5F5;
+    padding-left: 14px;
+}
+
+input.inputPesquisar::placeholder{
+
+    color: #828282;
+    
+}
+
+
+button.btnPesquisar {
+
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    width: 95px;
+    height: 50px;
+    background-color: #2E245E;
+    color: white;
 
 }
 
 section.carrinhoCompra{
 
+    max-width: 345px;
     width: 345px;
+    max-height: 505px;
     height: 505px;
-    background-color: black;
+    background-color: #F5F5F5;
 
 }
+
+p.tituloCarrinho{
+
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    background-color: #2E245E;
+    color: white;
+
+}
+
+ul.produtosCarrinho{
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    max-height: 345px;
+    height: 345px;
+    overflow: auto;
+}
+
+::-webkit-scrollbar{
+
+    background-color: #F5F5F5;
+    box-sizing: border-box;
+    display: flex;
+    width: 21px;
+    
+    
+}
+
+::-webkit-scrollbar-thumb{
+
+    background-color: #828282;
+    border-radius: 10px;
+    width: 21px;
+    border: 7px solid #F5F5F5 ;
+}
+
+li.itemCarrinho{
+    display: flex;
+    align-items: center;
+    height: 92px;
+    justify-content: flex-start;
+    margin-top: 30px;
+    margin-left: 14px;
+}
+
+div.carrinhoProdutoDetalhes{
+
+    display: flex;
+    flex-direction: column;
+    margin-left: 18px;
+    align-items: flex-start;
+    justify-content: space-around;
+    height: 92px;
+    width: 100%;
+
+}
+
+h2.tituloProdutoCarrinho{
+
+    color: #333333;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    
+
+}
+
+button.removerProduto{
+    border: 0;
+    background-color: #F5F5F5;
+    padding: 0;
+}
+
+button.removerProduto:hover{
+    color: #2E245E;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+div.detalhesCompra{
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.detalhes{
+
+    height: 63px;
+    background-color: #333333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-left: 14px;
+    padding-right: 26px;
+
+}
+
+
+
+
+
