@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script defer src="./js/database.js"></script>
+    <script defer src="./js/index.js"></script>
     
     <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -16,10 +18,10 @@
         <h1 class="titulo">WearTake</h1>
         <nav class="menu">
             <ul>
-                <li class="itemMenu ativo">Todos</li>
-                <li class="itemMenu naoAtivo">Acessórios</li>
-                <li class="itemMenu naoAtivo">Calçados</li>
-                <li class="itemMenu naoAtivo">Camisetas</li>
+                <li class="todos itemMenu ativo">Todos</li>
+                <li class="acessorios itemMenu naoAtivo">Acessórios</li>
+                <li class="calcados itemMenu naoAtivo">Calçados</li>
+                <li class="camisetas itemMenu naoAtivo">Camisetas</li>
             </ul>
         </nav>
     </header>
@@ -29,75 +31,6 @@
     <main class="container">
         <section class="produtos">
             <ul>
-                <li class="item">
-                    <img src="./img/jaqueta.svg" alt="" height="150px" width="290">
-                    <div class="dadosCard">
-                        <h3 class="categoria">Camisetas</h3>
-                        <h2 class="nomeProduto">Lightweight Jacket</h3>
-                        <p class="descricao">Adicione um pouco de energia ao seu 
-                        guarda-roupa de inverno com esta jaqueta vibrante...</p>
-                        <p class="valor">R$ 100.00</p>
-                        <button class="btnAdcionar">Adicionar ao carrinho</button>
-                    </div>
-                </li>
-                <li class="item">
-                    <img src="./img/gorro.svg" alt="" height="150px" width="290">
-                    <div class="dadosCard">
-                        <h3 class="categoria">Acessórios</h3>
-                        <h2 class="nomeProduto">Black Hat</h3>
-                        <p class="descricao">O gorro Next.js chegou!
-                            Esta beldade bordada tem um ajuste confortável
-                            que garante que...
-                        </p>
-                        <p class="valor">R$ 100.00</p>
-                        <button class="btnAdcionar">Adicionar ao carrinho</button>
-                    </div>
-                </li>
-                <li class="item">
-                    <img src="./img/jaqueta.svg" alt="" height="150px" width="290">
-                    <div class="dadosCard">
-                        <h3 class="categoria">Camisetas</h3>
-                        <h2 class="nomeProduto">Lightweight Jacket</h3>
-                        <p class="descricao">Adicione um pouco de energia ao seu 
-                        guarda-roupa de inverno com esta jaqueta vibrante...</p>
-                        <p class="valor">R$ 100.00</p>
-                        <button class="btnAdcionar">Adicionar ao carrinho</button>
-                    </div>
-                </li>
-                <li class="item">
-                    <img src="./img/jaqueta.svg" alt="" height="150px" width="290">
-                    <div class="dadosCard">
-                        <h3 class="categoria">Camisetas</h3>
-                        <h2 class="nomeProduto">Lightweight Jacket</h3>
-                        <p class="descricao">Adicione um pouco de energia ao seu 
-                        guarda-roupa de inverno com esta jaqueta vibrante...</p>
-                        <p class="valor">R$ 100.00</p>
-                        <button class="btnAdcionar">Adicionar ao carrinho</button>
-                    </div>
-                </li>
-                <li class="item">
-                    <img src="./img/jaqueta.svg" alt="" height="150px" width="290">
-                    <div class="dadosCard">
-                        <h3 class="categoria">Camisetas</h3>
-                        <h2 class="nomeProduto">Lightweight Jacket</h3>
-                        <p class="descricao">Adicione um pouco de energia ao seu 
-                        guarda-roupa de inverno com esta jaqueta vibrante...</p>
-                        <p class="valor">R$ 100.00</p>
-                        <button class="btnAdcionar">Adicionar ao carrinho</button>
-                    </div>
-                </li>
-                <li class="item">
-                    <img src="./img/jaqueta.svg" alt="" height="150px" width="290">
-                    <div class="dadosCard">
-                        <h3 class="categoria">Camisetas</h3>
-                        <h2 class="nomeProduto">Lightweight Jacket</h3>
-                        <p class="descricao">Adicione um pouco de energia ao seu 
-                        guarda-roupa de inverno com esta jaqueta vibrante...</p>
-                        <p class="valor">R$ 100.00</p>
-                        <button class="btnAdcionar">Adicionar ao carrinho</button>
-                    </div>
-                </li>
-                
             </ul>
         </section>
         <aside class="container">
@@ -106,43 +39,7 @@
                 <button class="btnPesquisar">Pesquisar</button>
             </section>
             <section class="carrinhoCompra">
-                <p class="tituloCarrinho">Carrinho de compras</p>
-                <ul class="produtosCarrinho">
-                    <li class="itemCarrinho">
-                        <img class="imgProdtoCarrinho" src="./img/jaqueta.svg" alt="" height="67" width="88">
-                        <div class="carrinhoProdutoDetalhes">
-                            <h2 class="tituloProdutoCarrinho">Lightweight Jacket</h2>
-                            <p class="valor">R$100.00</p>
-                            <button class="removerProduto">Remover Produto</button>
-                        </div>
-                    </li>
-                    <li class="itemCarrinho">
-                        <img class="imgProdtoCarrinho" src="./img/gorro.svg" alt="" height="67" width="88">
-                        <div class="carrinhoProdutoDetalhes">
-                            <h2 class="tituloProdutoCarrinho">Black Hat</h2>
-                            <p class="valor">R$100.00</p>
-                            <button class="removerProduto">Remover Produto</button>
-                        </div>
-                    </li>
-                    <li class="itemCarrinho">
-                        <img class="imgProdtoCarrinho" src="./img/jaqueta.svg" alt="" height="67" width="88">
-                        <div class="carrinhoProdutoDetalhes">
-                            <h2 class="tituloProdutoCarrinho">Lightweight Jacket</h2>
-                            <p class="valor">R$100.00</p>
-                            <button class="removerProduto">Remover Produto</button>
-                        </div>
-                    </li>
-                </ul>
-                <div class="detalhesCompra">
-                    <div class="detalhes quantdade">
-                        <p>Quantidade:</p>
-                        <p>3</p>
-                    </div>
-                    <div class="detalhes Total">
-                        <p>Total:</p>
-                        <p>R$300.00</p>    
-                    </div>
-                </div>
+                
             </section>
         </aside>
     </main>  
