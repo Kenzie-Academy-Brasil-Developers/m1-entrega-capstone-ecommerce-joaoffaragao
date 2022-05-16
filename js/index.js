@@ -113,7 +113,7 @@ function criaCardProduto(produto){
     li.addEventListener("click", adicionarProduto)
 
     let img = document.createElement("img")
-    img.src = `${produto.img}`
+    img.src = "../img/jaqueta.svg"
     img.height = 150
     img.width  = 290
     img.alt = `${produto.nameItem}`
